@@ -1,0 +1,34 @@
+<!--miniprogram/pages/items/item_test1.wxml-->
+<import src="/components/item-swiper/item-swiper.wxml" />
+<import src="/components/item-content/item-content.wxml" />
+<view class="container">
+  <template is="swiperTemplate" data="{{itemInfo}}"/>
+  <template is="contentTemplate" data="{{itemInfo}}"/>
+  <!-- <van-tag plain>标签</van-tag> -->
+  <view class="step">
+    <van-cell title="数量规格选择:" is-link bind:click="onTapItemSpecifications"/>
+    <van-cell title="服务:" is-link bind:click="onTapItemService"/>
+  </view>
+  <van-action-sheet show="{{ showSpecifications }}"  bind:close="onCloseSpecifications" >
+    <view class="show-container">
+      <view class="show-info"></view>
+      <view class="show-specification"></view>
+      <view class="show-quantity"></view>
+    </view>
+  </van-action-sheet>
+  <van-action-sheet show="{{ showService }}" title="服务"  bind:close="onCloseService" >
+    <view class="service">
+      <ul>
+        <li>yixieneirong</li>
+        <li>sada</li>
+      </ul>
+    </view>
+  </van-action-sheet>
+  <van-goods-action>
+    <van-goods-action-icon icon="chat" text="客服" bind:click="onClickIcon" />
+    <van-goods-action-icon icon="cart" text="购物车" bind:click="onClickIcon" />
+    <van-goods-action-button text="加入购物车" type="warning" bind:click="onClickButton" />
+    <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+  </van-goods-action>
+
+</view>

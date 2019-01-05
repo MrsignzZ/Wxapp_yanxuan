@@ -1,0 +1,23 @@
+<!--miniprogram/pages/my/my.wxml-->
+<view class="container">
+  <navigator class="userinfo" url="../login/login?nickname={{nickname}}?avatarUrl={{avatarUrl}}}">
+    <button class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+    <view class="id">
+      <view class="nickname">{{nickname}}</view>
+      <view class="nicknameType">点击登录账号</view>
+    </view>
+  </navigator>
+  <view class="menu">
+    <view class="list" wx:for="{{list}}" wx:for-item="item">
+      <view class="list-item">
+        <image src="{{item.pic}}" />
+        <view class="listName">
+          <text>{{item.txt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="idChange">
+    <button >切换账号</button>
+  </view>
+</view>
